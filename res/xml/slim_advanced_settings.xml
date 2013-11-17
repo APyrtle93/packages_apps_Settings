@@ -27,6 +27,11 @@
         android:key="advanced_settings_options_prefs"
         android:title="@string/advanced_options_settings_title">
 
+    <PreferenceScreen
+        android:fragment="com.android.settings.applications.AppOpsSummary"
+        android:title="@string/appops_settings_title"
+        android:id="@+id/appops_settings" />
+
         <ListPreference
             android:key="media_scanner_on_boot"
             android:title="@string/media_scanner_on_boot_title"
