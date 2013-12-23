@@ -871,7 +871,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="stylus_icon_enabled_summary">Show the pointer icon while using stylus</string>
 
     <!-- Themes -->
-    <string name="theme_settings_title">The real dark slim</string>
+    <string name="theme_settings_title">Dark Symmetry</string>
     <string name="theme_auto_mode_title">Switch theme</string>
     <string name="theme_auto_mode_off">Manual</string>
     <string name="theme_auto_mode_lightsensor">On light condition change</string>
@@ -884,8 +884,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="device_hostname">Device hostname</string>
 
     <!-- Chamber of Secrets -->
-    <string name="chamber_title">Chamber of secrets</string>
-    <string name="chamber_toast">The chamber of secrets has opened</string>
+    <string name="chamber_title">Psycho Circus</string>
+    <string name="chamber_toast">The Psycho Circus has opened</string>
 
     <!-- Volume Keys Media Control -->
     <string name="volume_keys_control_media_stream">Media control</string>
@@ -900,5 +900,17 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Minimum Vibration Duration -->
     <string name="minimum_vibration_duration">Minimum vibration duration</string>
+
+    <!-- Density Changer -->
+    <string name="custom_density_title">Custom lcd density</string>
+    <string name="custom_density">custom</string>
+    <string name="set_custom_density_title">Set custom density</string>
+    <string name="set_custom_density_set">Set</string>
+    <string name="reboot_now">Reboot</string>
+    <string name="dialog_reboot_title">Would you like to reboot?</string>
+    <string name="dialog_reboot_summary">You must reboot to apply new density</string>
+    <string name="custom_density_summary_invalid">"INVALID DENSITY!"</string>
+    <string name="dpi">DPI</string>
+    <string name="current_lcd_density">"Current LCD Density: "</string>
 
 </resources>
