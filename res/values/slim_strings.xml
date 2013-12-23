@@ -125,8 +125,8 @@
     <!-- WiFi forget all networks -->
     <string name="wifi_menu_forget_all">Forget all networks</string>
 
-    <!-- Status bar -->
-    <string name="status_bar_title">Status bar</string>
+    <!-- The Void -->
+    <string name="status_bar_title">The Void</string>
     <string name="status_bar_style_title">Style</string>
     <string name="status_bar_general_title">General</string>
 
