@@ -29,8 +29,9 @@
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_rom_settings">Advanced settings</string>
 
-    <!-- Slim settings screens -->
-    <string name="interface_settings_title">StatusBar</string>
+    <!-- Validus settings screens -->
+    <string name="interface_settings_title">The Void</string>
+	
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="device_settings_title">Device</string>
 
@@ -126,7 +127,7 @@
     <string name="wifi_menu_forget_all">Forget all networks</string>
 
     <!-- The Void -->
-    <string name="status_bar_title">The Void</string>
+    <string name="status_bar_title">Status Bar</string>
     <string name="status_bar_style_title">Style</string>
     <string name="status_bar_general_title">General</string>
 
