@@ -36,6 +36,7 @@ import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.SeekBarPreference;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
@@ -75,6 +76,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
     private static final String LOCK_NUMPAD_RANDOM = "lock_numpad_random";
     private static final String LOCK_BEFORE_UNLOCK = "lock_before_unlock";
+    private static final String KEY_BLUR_BEHIND = "blur_behind";
+    private static final String KEY_BLUR_RADIUS = "blur_radius";	
 
     private static final int SET_OR_CHANGE_LOCK_METHOD_REQUEST = 123;
     private static final int CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_IMPROVE_REQUEST = 124;
@@ -117,6 +120,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private CheckBoxPreference mToggleVerifyApps;
     private CheckBoxPreference mPowerButtonInstantlyLocks;
     private Preference mEnableKeyguardWidgets;
+    private CheckBoxPreference mBlurBehind;
+    private SeekBarPreference mBlurRadius;	
 
     private CheckBoxPreference mQuickUnlockScreen;
     private ListPreference mLockNumpadRandom;
@@ -326,6 +331,15 @@ public class SecuritySettings extends RestrictedSettingsFragment
             }
         }
 
+        // Blur lockscreen
+        mBlurBehind = (CheckBoxPreference) findPreference(KEY_BLUR_BEHIND);
+        mBlurBehind.setChecked(Settings.System.getInt(getContentResolver(),
+            Settings.System.LOCKSCREEN_BLUR_BEHIND, 0) == 1);
+        mBlurRadius = (SeekBarPreference) findPreference(KEY_BLUR_RADIUS);
+        mBlurRadius.setProgress(Settings.System.getInt(getContentResolver(),
+            Settings.System.LOCKSCREEN_BLUR_RADIUS, 12));
+        mBlurRadius.setOnPreferenceChangeListener(this);
+		
         // Show password
         mShowPassword = (CheckBoxPreference) root.findPreference(KEY_SHOW_PASSWORD);
         mResetCredentials = root.findPreference(KEY_RESET_CREDENTIALS);
@@ -636,7 +650,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
             lockPatternUtils.setPowerButtonInstantlyLocks(isToggled(preference));
         } else if (preference == mShowPassword) {
             Settings.System.putInt(getContentResolver(), Settings.System.TEXT_SHOW_PASSWORD,
-                    mShowPassword.isChecked() ? 1 : 0);
+			Settings.System.MENU_UNLOCK_SCREEN, isToggled(preference) ? 1 : 0);
+			mShowPassword.isChecked() ? 1 : 0);
         } else if (preference == mToggleAppInstallation) {
             if (mToggleAppInstallation.isChecked()) {
                 mToggleAppInstallation.setChecked(false);
@@ -644,7 +659,10 @@ public class SecuritySettings extends RestrictedSettingsFragment
             } else {
                 setNonMarketAppsAllowed(false);
             }
-        } else if (KEY_TOGGLE_VERIFY_APPLICATIONS.equals(key)) {
+        } else if (preference == mBlurBehind) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_BLUR_BEHIND,
+                    mBlurBehind.isChecked() ? 1 : 0);
+		} else if (KEY_TOGGLE_VERIFY_APPLICATIONS.equals(key)) {
             Settings.Global.putInt(getContentResolver(), Settings.Global.PACKAGE_VERIFIER_ENABLE,
                     mToggleVerifyApps.isChecked() ? 1 : 0);
         } else if (preference == mQuickUnlockScreen) {
@@ -696,6 +714,9 @@ public class SecuritySettings extends RestrictedSettingsFragment
                 Log.e("SecuritySettings", "could not persist lockAfter timeout setting", e);
             }
             updateLockAfterPreferenceSummary();
+        } else if (preference == mBlurRadius) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_BLUR_RADIUS, (Integer)value);			
         } else if (preference == mLockNumpadRandom) {
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.LOCK_NUMPAD_RANDOM,
