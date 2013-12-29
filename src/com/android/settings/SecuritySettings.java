@@ -77,7 +77,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String LOCK_NUMPAD_RANDOM = "lock_numpad_random";
     private static final String LOCK_BEFORE_UNLOCK = "lock_before_unlock";
     private static final String KEY_BLUR_BEHIND = "blur_behind";
-    private static final String KEY_BLUR_RADIUS = "blur_radius";	
+    private static final String KEY_BLUR_RADIUS = "blur_radius";
+	private static final String KEY_ALLOW_ROTATION = "allow_rotation";
 
     private static final int SET_OR_CHANGE_LOCK_METHOD_REQUEST = 123;
     private static final int CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_IMPROVE_REQUEST = 124;
@@ -121,7 +122,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private CheckBoxPreference mPowerButtonInstantlyLocks;
     private Preference mEnableKeyguardWidgets;
     private CheckBoxPreference mBlurBehind;
-    private SeekBarPreference mBlurRadius;	
+    private SeekBarPreference mBlurRadius;
+	private CheckBoxPreference mAllowRotation;
 
     private CheckBoxPreference mQuickUnlockScreen;
     private ListPreference mLockNumpadRandom;
@@ -339,6 +341,11 @@ public class SecuritySettings extends RestrictedSettingsFragment
         mBlurRadius.setProgress(Settings.System.getInt(getContentResolver(),
             Settings.System.LOCKSCREEN_BLUR_RADIUS, 12));
         mBlurRadius.setOnPreferenceChangeListener(this);
+		
+        // Rotate
+        mAllowRotation = (CheckBoxPreference) findPreference(KEY_ALLOW_ROTATION);
+        mAllowRotation.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_ROTATION, 0) == 1);
 		
         // Show password
         mShowPassword = (CheckBoxPreference) root.findPreference(KEY_SHOW_PASSWORD);
@@ -662,6 +669,10 @@ public class SecuritySettings extends RestrictedSettingsFragment
         } else if (preference == mBlurBehind) {
             Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_BLUR_BEHIND,
                     mBlurBehind.isChecked() ? 1 : 0);
+        } else if (preference == mAllowRotation) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_ROTATION, mAllowRotation.isChecked()
+                    ? 1 : 0);					
 		} else if (KEY_TOGGLE_VERIFY_APPLICATIONS.equals(key)) {
             Settings.Global.putInt(getContentResolver(), Settings.Global.PACKAGE_VERIFIER_ENABLE,
                     mToggleVerifyApps.isChecked() ? 1 : 0);

@@ -86,6 +86,12 @@
             android:title="@string/owner_info_settings_title"
             android:summary="@string/owner_info_settings_summary"/>
 			
+         <CheckBoxPreference
+            android:key="allow_rotation"
+            android:title="@string/allow_rotate_title"
+            android:summary="@string/allow_rotate_summary"
+            android:defaultValue="false" />
+			
         <CheckBoxPreference
             android:key="blur_behind"
             android:title="@string/blur_behind_title"
