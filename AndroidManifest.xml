@@ -722,7 +722,11 @@
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/display_settings" />
         </activity-alias>
-
+		
+		<!-- The Void -->
+        <activity android:name=".slim.Animations" />
+        <activity android:name=".slim.ListViewAnimations" />		
+		
         <activity android:name="Settings$DeviceInfoSettingsActivity"
                 android:theme="@android:style/Theme.Holo.DialogWhenLarge"
                 android:label="@string/device_info_settings"

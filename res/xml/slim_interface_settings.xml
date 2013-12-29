@@ -42,6 +42,12 @@
         android:title="@string/custom_density_title"
         android:entries="@array/lcd_density_entries"
         android:entryValues="@array/lcd_density_entries" />	
+
+	 <Preference
+            android:fragment="com.android.settings.slim.Animations"
+            android:key="animations"
+            android:icon="@drawable/ic_dt_animations"
+            android:title="@string/animations_cat" />
 		
         <PreferenceScreen
           android:key="xposed_installer"
