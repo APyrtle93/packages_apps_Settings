@@ -46,7 +46,6 @@
 	 <Preference
             android:fragment="com.android.settings.slim.Animations"
             android:key="animations"
-            android:icon="@drawable/ic_dt_animations"
             android:title="@string/animations_cat" />
 		
         <PreferenceScreen
