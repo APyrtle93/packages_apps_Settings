@@ -937,6 +937,7 @@
         <item>2</item>
     </string-array>
 
+<<<<<<< HEAD
     <!-- LCD density -->
     <string-array name="lcd_density_entries" translatable="false">
         <item>160</item>
@@ -956,6 +957,19 @@
         <item>@string/custom_density</item>
     </string-array>
 	
+    <!-- Advanced reboot menu dev options -->
+    <string-array name="advanced_reboot_entries">
+        <item>@string/advanced_reboot_disabled</item>
+        <item>@string/advanced_reboot_hide_on_keyguard</item>
+        <item>@string/advanced_reboot_show_always</item>
+    </string-array>
+
+    <string-array name="advanced_reboot_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <!-- Listview animation -->
     <string-array name="listview_animation_entries">
         <item>@string/listview_off</item>

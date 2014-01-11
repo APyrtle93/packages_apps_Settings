@@ -78,8 +78,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String LOCK_BEFORE_UNLOCK = "lock_before_unlock";
     private static final String KEY_BLUR_BEHIND = "blur_behind";
     private static final String KEY_BLUR_RADIUS = "blur_radius";
-        private static final String KEY_ALLOW_ROTATION = "allow_rotation";
-
+    private static final String KEY_ALLOW_ROTATION = "allow_rotation";
+    private static final String KEY_ADVANCED_REBOOT = "advanced_reboot";
     private static final int SET_OR_CHANGE_LOCK_METHOD_REQUEST = 123;
     private static final int CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_IMPROVE_REQUEST = 124;
     private static final int CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_LIVELINESS_OFF = 125;
@@ -126,7 +126,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private Preference mEnableKeyguardWidgets;
     private CheckBoxPreference mBlurBehind;
     private SeekBarPreference mBlurRadius;
-        private CheckBoxPreference mAllowRotation;
+    private CheckBoxPreference mAllowRotation;
+    private ListPreference mAdvancedReboot;
 
     private CheckBoxPreference mQuickUnlockScreen;
     private ListPreference mLockNumpadRandom;
@@ -410,6 +411,12 @@ public class SecuritySettings extends RestrictedSettingsFragment
                 mToggleVerifyApps.setEnabled(false);
             }
         }
+
+        mAdvancedReboot = (ListPreference) root.findPreference(KEY_ADVANCED_REBOOT);
+        mAdvancedReboot.setValue(String.valueOf(Settings.Secure.getInt(
+                getContentResolver(), Settings.Secure.ADVANCED_REBOOT, 1)));
+        mAdvancedReboot.setSummary(mAdvancedReboot.getEntry());
+        mAdvancedReboot.setOnPreferenceChangeListener(this);
 
         // Determine options based on device telephony support
         if (!pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
@@ -754,6 +761,11 @@ public class SecuritySettings extends RestrictedSettingsFragment
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.LOCK_BEFORE_UNLOCK,
                     ((Boolean) value) ? 1 : 0);
+        } else if (preference == mAdvancedReboot) {
+            Settings.Secure.putInt(getContentResolver(), Settings.Secure.ADVANCED_REBOOT,
+                    Integer.valueOf((String) value));
+            mAdvancedReboot.setValue(String.valueOf(value));
+            mAdvancedReboot.setSummary(mAdvancedReboot.getEntry());
         }
         return true;
     }
