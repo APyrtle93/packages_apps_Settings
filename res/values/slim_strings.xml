@@ -1002,7 +1002,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="force_expanded_view_summary">Show notifications expanded by default. You still will be able to toggle between expanded and normal view.</string>
 
     <!-- Performance Settings -->
-    <string name="performance_settings_title">Performance</string>
+    <string name="performance_settings">Performance</string>
 
     <!-- Lockscreen battery ring -->
     <string name="battery_around_lockscreen_ring">Battery around unlock ring</string>
