@@ -675,6 +675,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
 		} else if (preference == mShowPassword) {
             Settings.System.putInt(getContentResolver(), Settings.System.TEXT_SHOW_PASSWORD,
 			Settings.System.MENU_UNLOCK_SCREEN, isToggled(preference) ? 1 : 0);
+			mShowPassword.isChecked() ? 1 : 0);
         } else if (preference == mToggleAppInstallation) {
             if (mToggleAppInstallation.isChecked()) {
                 mToggleAppInstallation.setChecked(false);
