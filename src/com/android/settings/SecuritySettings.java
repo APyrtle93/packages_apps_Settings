@@ -1,18 +1,18 @@
 /*
- * Copyright (C) 2007 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright (C) 2007 The Android Open Source Project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 
 package com.android.settings;
 
@@ -53,8 +53,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Gesture lock pattern settings.
- */
+* Gesture lock pattern settings.
+*/
 public class SecuritySettings extends RestrictedSettingsFragment
         implements OnPreferenceChangeListener, DialogInterface.OnClickListener {
     static final String TAG = "SecuritySettings";
@@ -78,7 +78,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String LOCK_BEFORE_UNLOCK = "lock_before_unlock";
     private static final String KEY_BLUR_BEHIND = "blur_behind";
     private static final String KEY_BLUR_RADIUS = "blur_radius";
-	private static final String KEY_ALLOW_ROTATION = "allow_rotation";
+        private static final String KEY_ALLOW_ROTATION = "allow_rotation";
 
     private static final int SET_OR_CHANGE_LOCK_METHOD_REQUEST = 123;
     private static final int CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_IMPROVE_REQUEST = 124;
@@ -100,7 +100,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     // Slim Additions
     private static final String KEY_APP_SECURITY_CATEGORY = "app_security";
     private static final String KEY_BLACKLIST = "blacklist";
-	
+        
     // Omni Additions
     private static final String BATTERY_AROUND_LOCKSCREEN_RING = "battery_around_lockscreen_ring";
 
@@ -126,7 +126,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private Preference mEnableKeyguardWidgets;
     private CheckBoxPreference mBlurBehind;
     private SeekBarPreference mBlurRadius;
-	private CheckBoxPreference mAllowRotation;
+        private CheckBoxPreference mAllowRotation;
 
     private CheckBoxPreference mQuickUnlockScreen;
     private ListPreference mLockNumpadRandom;
@@ -244,7 +244,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
             mLockRingBattery.setChecked(Settings.System.getInt(getContentResolver(),
                     Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, 0) == 1);
         }
-		
+                
         // biometric weak liveliness
         mBiometricWeakLiveliness =
                 (CheckBoxPreference) root.findPreference(KEY_BIOMETRIC_WEAK_LIVELINESS);
@@ -355,12 +355,12 @@ public class SecuritySettings extends RestrictedSettingsFragment
         mBlurRadius.setProgress(Settings.System.getInt(getContentResolver(),
             Settings.System.LOCKSCREEN_BLUR_RADIUS, 12));
         mBlurRadius.setOnPreferenceChangeListener(this);
-		
+                
         // Rotate
         mAllowRotation = (CheckBoxPreference) findPreference(KEY_ALLOW_ROTATION);
         mAllowRotation.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_ROTATION, 0) == 1);
-		
+                
         // Show password
         mShowPassword = (CheckBoxPreference) root.findPreference(KEY_SHOW_PASSWORD);
         mResetCredentials = root.findPreference(KEY_RESET_CREDENTIALS);
@@ -648,7 +648,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
                 lockPatternUtils.setBiometricWeakLivelinessEnabled(true);
             } else {
                 // In this case the user has just unchecked the checkbox, but this action requires
-                // them to confirm their password.  We need to re-check the checkbox until
+                // them to confirm their password. We need to re-check the checkbox until
                 // they've confirmed their password
                 mBiometricWeakLiveliness.setChecked(true);
                 ChooseLockSettingsHelper helper =
@@ -671,11 +671,10 @@ public class SecuritySettings extends RestrictedSettingsFragment
             lockPatternUtils.setPowerButtonInstantlyLocks(isToggled(preference));
         } else if (preference == mLockRingBattery) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, isToggled(preference) ? 1 : 0);        
-		} else if (preference == mShowPassword) {
+                    Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, isToggled(preference) ? 1 : 0);
+                } else if (preference == mShowPassword) {
             Settings.System.putInt(getContentResolver(), Settings.System.TEXT_SHOW_PASSWORD,
-			Settings.System.MENU_UNLOCK_SCREEN, isToggled(preference) ? 1 : 0);
-			mShowPassword.isChecked() ? 1 : 0);
+                    mShowPassword.isChecked() ? 1 : 0);                        
         } else if (preference == mToggleAppInstallation) {
             if (mToggleAppInstallation.isChecked()) {
                 mToggleAppInstallation.setChecked(false);
@@ -689,8 +688,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
         } else if (preference == mAllowRotation) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_ROTATION, mAllowRotation.isChecked()
-                    ? 1 : 0);					
-		} else if (KEY_TOGGLE_VERIFY_APPLICATIONS.equals(key)) {
+                    ? 1 : 0);                                        
+                } else if (KEY_TOGGLE_VERIFY_APPLICATIONS.equals(key)) {
             Settings.Global.putInt(getContentResolver(), Settings.Global.PACKAGE_VERIFIER_ENABLE,
                     mToggleVerifyApps.isChecked() ? 1 : 0);
         } else if (preference == mQuickUnlockScreen) {
@@ -710,8 +709,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
     }
 
     /**
-     * see confirmPatternThenDisableAndClear
-     */
+* see confirmPatternThenDisableAndClear
+*/
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -724,7 +723,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
             final LockPatternUtils lockPatternUtils = mChooseLockSettingsHelper.utils();
             lockPatternUtils.setBiometricWeakLivelinessEnabled(false);
             // Setting the mBiometricWeakLiveliness checked value to false is handled when onResume
-            // is called by grabbing the value from lockPatternUtils.  We can't set it here
+            // is called by grabbing the value from lockPatternUtils. We can't set it here
             // because mBiometricWeakLiveliness could be null
             return;
         }
@@ -744,7 +743,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
             updateLockAfterPreferenceSummary();
         } else if (preference == mBlurRadius) {
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKSCREEN_BLUR_RADIUS, (Integer)value);			
+                    Settings.System.LOCKSCREEN_BLUR_RADIUS, (Integer)value);                        
         } else if (preference == mLockNumpadRandom) {
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.LOCK_NUMPAD_RANDOM,
