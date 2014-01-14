@@ -249,6 +249,15 @@
         android:fragment="com.android.settings.slim.AdvancedSettings"
         android:icon="@drawable/ic_settings_advanced"
         android:title="@string/advanced_options_settings_title" />
+        
+    <!-- Performance Controls -->
+    <header        
+        android:title="@string/performance_settings" >
+    <intent
+        android:targetPackage="com.brewcrewfoo.performance" 
+        android:action="android.intent.action.MAIN" 
+        android:targetClass="com.brewcrewfoo.performance.activities.MainActivity" />
+    </header>        
 
 	<!-- About Device -->
     <header
