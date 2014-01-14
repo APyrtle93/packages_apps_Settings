@@ -251,7 +251,8 @@
         android:title="@string/advanced_options_settings_title" />
         
     <!-- Performance Controls -->
-    <header        
+    <header
+        android:icon="@drawable/ic_settings_performance"
         android:title="@string/performance_settings" >
     <intent
         android:targetPackage="com.brewcrewfoo.performance" 
