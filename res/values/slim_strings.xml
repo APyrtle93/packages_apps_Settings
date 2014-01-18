@@ -989,7 +989,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="listview_overshoot_interpolator">Overshoot</string>
     <string name="listview_anticipate_overshoot_interpolator">Anticipate and overshoot</string>
     <string name="listview_bounce_interpolator">Bounce</string>
-<<<<<<< HEAD
 	
     <!--Lockscreen blur-->
     <string name="blur_behind_title">Blur Lockscreen Background</string>
