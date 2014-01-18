@@ -151,6 +151,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                          e.printStackTrace();
                      }
                  }
+            } else {
+                 mLightOptions.removePreference(mNotificationPulse);
+                 mLightOptions.removePreference(mNotificationLight);
             }
 
             if (!getResources().getBoolean(
@@ -158,6 +161,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 mLightOptions.removePreference(mBatteryPulse);
             } else {
                 updateBatteryPulseDescription();
+            }
+
+            //If we're removed everything, get rid of the category
+            if (mLightOptions.getPreferenceCount() == 0) {
+                prefSet.removePreference(mLightOptions);
             }
         }
 
