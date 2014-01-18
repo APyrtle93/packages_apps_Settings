@@ -937,7 +937,6 @@
         <item>2</item>
     </string-array>
 
-<<<<<<< HEAD
     <!-- LCD density -->
     <string-array name="lcd_density_entries" translatable="false">
         <item>160</item>
