@@ -16,7 +16,7 @@
 *
 */
 
-package com.android.settings.slim.interfacesettings;
+package com.android.settings.du.interfacesettings;
 
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
