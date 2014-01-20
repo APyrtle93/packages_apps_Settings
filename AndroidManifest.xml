@@ -725,8 +725,7 @@
 		
 		<!-- The Void -->
         <activity android:name=".slim.Animations" />
-        <activity android:name=".slim.ListViewAnimations" />
-        <activity android:name=".slim.interfacesettings.StatusBarColor" />		
+        <activity android:name=".slim.ListViewAnimations" />		
 		
         <activity android:name="Settings$DeviceInfoSettingsActivity"
                 android:theme="@android:style/Theme.Holo.DialogWhenLarge"
