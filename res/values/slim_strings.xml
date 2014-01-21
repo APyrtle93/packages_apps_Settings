@@ -950,12 +950,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="dpi">DPI</string>
     <string name="current_lcd_density">"Current LCD Density: "</string>
 	
-    <string name="xposed_dpi_title">Xposed DPI Settings</string>
-    <string name="xposed_dpi_summary">Customize DPI values of specific apps</string>
     <string name="xposed_install_title">Xposed DPI Installer</string>
-    <string name="xposed_install_summary">*Install before using DPI settings app*</string>	
 
-	<string name="animations_cat">Animations</string>
+    <string name="animations_cat">Animations</string>
 	
     <!-- Volume Keys Media Control -->
     <string name="volume_keys_control_media_stream">Media control</string>
