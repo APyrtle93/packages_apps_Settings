@@ -61,7 +61,7 @@
 		
         <PreferenceScreen
           android:key="xposed_installer"
-            android:title="@string/xposed_install_title"
+            android:title="@string/xposed_install_title" >
           <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="de.robv.android.xposed.installer"
                 android:targetClass="de.robv.android.xposed.installer.XposedInstallerActivity" />
