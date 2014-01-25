@@ -32,26 +32,26 @@ limitations under the License.
 
         <PreferenceScreen
             android:key="pie_button"
-            android:fragment="com.android.settings.liquid.dslv.ButtonsListViewSettings"
+            android:fragment="com.android.settings.slim.dslv.ButtonsListViewSettings"
             android:title="@string/pie_button_title"
             android:summary="@string/pie_button_summary">
                 <extra android:name="buttonMode" android:value="1" />
          <extra android:name="maxAllowedButtons" android:value="5" />
                 <extra android:name="disableDeleteLastEntry" android:value="true" />
-         <extra android:name="fragment" android:value="com.android.settings.liquid.fragments.PieButtonFragment" />
+         <extra android:name="fragment" android:value="com.android.settings.slim.fragments.PieButtonFragment" />
         </PreferenceScreen>
 
         <PreferenceScreen
             android:key="pie_style"
             android:title="@string/pie_style_title"
             android:summary="@string/pie_style_summary"
-            android:fragment="com.android.settings.liquid.PieStyleSettings" />
+            android:fragment="com.android.settings.slim.PieStyleSettings" />
 
         <PreferenceScreen
             android:key="pie_trigger"
             android:title="@string/pie_trigger_title"
             android:summary="@string/pie_trigger_summary"
-            android:fragment="com.android.settings.liquid.PieTriggerSettings" />
+            android:fragment="com.android.settings.slim.PieTriggerSettings" />
 
     </PreferenceCategory>
 
