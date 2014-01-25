@@ -58,10 +58,14 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements
     private static final int DIALOG_CUSTOM_DENSITY = 101;
 
     private static final String DENSITY_PROP = "persist.sys.lcd_density";
+	
+	private static final String KEY_DUAL_PANEL = "force_dualpanel";
 
     private static ListPreference mLcdDensity;
 
     private static Activity mActivity;
+	
+	private CheckBoxPreference mDualPanel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -140,6 +144,10 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements
         Settings.System.putInt(mActivity.getContentResolver(),
                 Settings.System.NAVIGATION_BAR_HEIGHT, navbarHeight);
     }
+	
+        mDualPanel = (CheckBoxPreference) findPreference(KEY_DUAL_PANEL);
+        mDualPanel.setChecked(Settings.System.getBoolean(getContentResolver(),
+                Settings.System.FORCE_DUAL_PANEL, false));
 
     private static void killCurrentLauncher() {
         ComponentName defaultLauncher = mActivity.getPackageManager().getHomeActivities(
@@ -163,6 +171,10 @@ public class InterfaceSettings extends SettingsPreferenceFragment implements
             args.putInt("id", id);
             frag.setArguments(args);
             return frag;
+        } else if (preference == mDualPanel) {
+      Settings.System.putBoolean(getContentResolver(), Settings.System.FORCE_DUAL_PANEL,
+                    mDualPanel.isChecked() ? true : false);
+      return true;			
         }
 
         InterfaceSettings getOwner() {
