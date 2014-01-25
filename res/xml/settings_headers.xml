@@ -81,6 +81,13 @@
         android:fragment="com.android.settings.crdroid.Halo"
         android:icon="@drawable/ic_settings_halo" 
         android:title="@string/halo_settings_title" />
+		
+    <!-- Pie control -->
+    <header
+        android:id="@+id/pie_control"
+    android:title="@string/pie_control_title"
+        android:fragment="com.android.settings.slim.PieControl"
+        android:icon="@drawable/ic_liquid_pie_control" />
 
     <!-- Themes -->
     <header
