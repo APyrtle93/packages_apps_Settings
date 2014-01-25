@@ -53,7 +53,6 @@
         android:imeOptions="actionDone"
         android:inputType="textNoSuggestions"
         android:persistent="false" />
-		
    	 
 	 <Preference
             android:fragment="com.android.settings.slim.Animations"
@@ -67,11 +66,5 @@
                 android:targetPackage="de.robv.android.xposed.installer"
                 android:targetClass="de.robv.android.xposed.installer.XposedInstallerActivity" />
         </PreferenceScreen>
-		
-    <CheckBoxPreference
-        android:key="force_dualpanel"
-        android:title="@string/force_dualpanel_title"
-        android:summary="@string/force_dualpanel_summary"
-        android:defaultValue="false" />
 
 </PreferenceScreen>
