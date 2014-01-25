@@ -766,4 +766,20 @@
     <string name="advanced_reboot_hide_on_keyguard">Скрывать на экране блокировки</string>
     <string name="advanced_reboot_show_always">Всегда показывать</string>
 
+    <!-- Keyguard always show battery -->
+    <string name="lockscreen_battery_status_title">Состояние батареи</string>
+    <string name="lockscreen_battery_status_summary">Всегда показывать состояние батареи на экране блокировки</string>
+
+    <!-- Notification hide labels -->
+    <string name="notification_hide_labels_title">Скрывать метки уведомлений</string>
+    <string name="notification_hide_labels_disable">Показывать все метки</string>
+    <string name="notification_hide_labels_carrier">Скрывать имя оператора</string>
+    <string name="notification_hide_labels_wifi">Скрывать имя WiFi-сети</string>
+    <string name="notification_hide_labels_all">Скрывать все метки</string>
+    <string name="notification_hide_labels_text">в панели уведомлений</string>
+
+    <!-- About device screen, CPU and RAM info. -->
+    <string name="cpu_info">Процессор</string>
+    <string name="mem_info">Память</string>
+
 </resources>
