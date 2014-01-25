@@ -1072,5 +1072,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!--AppOps-->
     <string name="appops_settings_title">App privacy</string>
+	
+    <!-- About device screen, CPU and RAM info. -->
+    <string name="cpu_info">CPU</string>
+    <string name="mem_info">Memory</string>
 
 </resources>
