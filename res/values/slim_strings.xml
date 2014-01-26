@@ -1076,5 +1076,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- About device screen, CPU and RAM info. -->
     <string name="cpu_info">CPU</string>
     <string name="mem_info">Memory</string>
+	
+    <!-- OmniSwitch -->
+    <string name="omniswitch_settings_title">OmniSwitch</string>
 
 </resources>
