@@ -1176,4 +1176,5 @@ public class Settings extends PreferenceActivity
     public static class BatteryIconStyleSettingsActivity extends Settings { /* empty */ }
     public static class DisplayRotationSettingsActivity extends Settings { /* empty */ }
     public static class PerformanceSettingsActivity extends Settings { /* empty */ }
+    public static class ASSRamBarActivity extends Settings { /* empty */ }	
 }
