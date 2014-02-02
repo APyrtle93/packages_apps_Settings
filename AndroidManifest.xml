@@ -1736,9 +1736,8 @@
                 android:value="com.android.settings.slim.blacklist.BlacklistSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/security_settings" />
-        </activity
 		
-        <!-- RAM bar -->
+	<!-- rambar -->
         <activity android:name="Settings$ASSRamBarActivity"
                 android:label="@string/ram_bar">
             <intent-filter>
