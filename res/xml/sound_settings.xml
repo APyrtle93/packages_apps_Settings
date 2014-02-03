@@ -73,6 +73,11 @@
             android:dialogTitle="@string/notification_sound_dialog_title"
             android:persistent="false"
             android:ringtoneType="notification" />
+			
+    <PreferenceScreen
+            android:key="sound_packages"
+            android:fragment="com.android.settings.AOSPAL.SoundPackageSettings"
+            android:title="@string/sound_packages_title" />
 
     <CheckBoxPreference
             android:key="dtmf_tone"
