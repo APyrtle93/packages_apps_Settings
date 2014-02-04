@@ -1138,4 +1138,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="select_sound_pack_summary">Select the active sound pack</string>
     <string name="default_sound_pack">Default (System)</string>
     <string name="error_pack_install">Error while installing the sound pack</string>
+	
+    <!-- Network speed -->
+    <string name="show_network_speed">Network speed indicator</string>
+    <string name="show_network_speed_summary">Show network speed in statusbar</string>
+	
 </resources>
