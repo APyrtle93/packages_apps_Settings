@@ -1155,5 +1155,16 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="progressbar_color_2_title">Color2</string>
     <string name="progressbar_color_3_title">Color3</string>
     <string name="progressbar_color_4_title">Color4</string>
-    <string name="sample_progressbar_text">ProgressBar : Preview</string>	
+    <string name="sample_progressbar_text">ProgressBar : Preview</string>
+	
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Set</string>
+    <string name="color_default">Default</string>
+	
 </resources>
