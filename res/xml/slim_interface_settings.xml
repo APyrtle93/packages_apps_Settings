@@ -76,6 +76,16 @@
                 android:targetClass="de.robv.android.xposed.installer.XposedInstallerActivity" />
         </PreferenceScreen>
 		
+    <PreferenceCategory
+	android:key="progressbar"
+	android:title="@string/progressbar_title" >
+
+    <PreferenceScreen
+        android:key="progressbar_settings"
+        android:fragment="com.android.settings.cyanogenmod.ProgressBar"
+        android:title="@string/progressbar_title" >
+    </PreferenceScreen>
+		
          <PreferenceScreen
             android:id="@+id/omniswitch"
             android:layout="@layout/preference_omniswitch"
