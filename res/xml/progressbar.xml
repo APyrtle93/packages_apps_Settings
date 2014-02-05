@@ -88,6 +88,4 @@ limitations under the License.
         android:title="@string/progressbar_color_4_title"
         android:defaultValue="#ffffff" />
 
-    </PreferenceCategory>
-
 </PreferenceScreen>
