@@ -78,6 +78,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
     private static final String LOCK_NUMPAD_RANDOM = "lock_numpad_random";
     private static final String LOCK_BEFORE_UNLOCK = "lock_before_unlock";
+	private static final String KEY_VISIBLE_GESTURE = "visiblegesture";
     private static final String KEY_BLUR_BEHIND = "blur_behind";
     private static final String KEY_BLUR_RADIUS = "blur_radius";
     private static final String KEY_ALLOW_ROTATION = "allow_rotation";
@@ -140,6 +141,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private CheckBoxPreference mQuickUnlockScreen;
     private ListPreference mLockNumpadRandom;
     private CheckBoxPreference mLockBeforeUnlock;
+	private CheckBoxPreference mVisibleGesture;
     private CheckBoxPreference mMenuUnlock;
 
     private CheckBoxPreference mBatteryStatus;
@@ -228,6 +230,9 @@ public class SecuritySettings extends RestrictedSettingsFragment
                 case DevicePolicyManager.PASSWORD_QUALITY_COMPLEX:
                     resid = R.xml.security_settings_password;
                     break;
+                case DevicePolicyManager.PASSWORD_QUALITY_GESTURE_WEAK:
+                    resid = R.xml.security_settings_gesture;
+                    break;					
             }
         }
         addPreferencesFromResource(resid);
@@ -281,6 +286,9 @@ public class SecuritySettings extends RestrictedSettingsFragment
 
         // visible pattern
         mVisiblePattern = (CheckBoxPreference) root.findPreference(KEY_VISIBLE_PATTERN);
+		
+        // visible gesture
+        mVisibleGesture = (CheckBoxPreference) root.findPreference(KEY_VISIBLE_GESTURE);
 
         // lock instantly on power key press
         mPowerButtonInstantlyLocks = (CheckBoxPreference) root.findPreference(
@@ -308,6 +316,9 @@ public class SecuritySettings extends RestrictedSettingsFragment
             if (securityCategory != null && mVisiblePattern != null) {
                 securityCategory.removePreference(root.findPreference(KEY_VISIBLE_PATTERN));
             }
+            if (securityCategory != null && mVisibleGesture != null) {
+                securityCategory.removePreference(root.findPreference(KEY_VISIBLE_GESTURE));
+            }			
         }
 
         // Quick Unlock Screen Control
@@ -726,6 +737,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
             lockPatternUtils.setLockPatternEnabled(isToggled(preference));
         } else if (KEY_VISIBLE_PATTERN.equals(key)) {
             lockPatternUtils.setVisiblePatternEnabled(isToggled(preference));
+        } else if (KEY_VISIBLE_GESTURE.equals(key)) {
+            lockPatternUtils.setVisibleGestureEnabled(isToggled(preference));			
         } else if (KEY_POWER_INSTANTLY_LOCKS.equals(key)) {
             lockPatternUtils.setPowerButtonInstantlyLocks(isToggled(preference));
         } else if (preference == mLockRingBattery) {
