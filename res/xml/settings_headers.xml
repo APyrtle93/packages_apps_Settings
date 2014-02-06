@@ -88,6 +88,13 @@
         android:fragment="com.android.settings.slim.themes.ThemeSettings"
         android:icon="@drawable/ic_settings_theme"
         android:title="@string/theme_settings_title" />
+        
+    <!-- Performance Controls -->
+    <header
+        android:id="@+id/performance_controls"
+        android:fragment="com.brewcrewfoo.performance.activities.MainActivity"
+        android:icon="@drawable/ic_settings_performance"
+        android:title="@string/performance_settings" />         
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
@@ -249,13 +256,6 @@
         android:fragment="com.android.settings.slim.AdvancedSettings"
         android:icon="@drawable/ic_settings_advanced"
         android:title="@string/advanced_options_settings_title" />
-        
-    <!-- Performance Controls -->
-    <header
-        android:id="@+id/performance_controls"
-        android:fragment="com.brewcrewfoo.performance.activities.MainActivity"
-        android:icon="@drawable/ic_settings_performance"
-        android:title="@string/performance_settings" />        
 
 	<!-- About Device -->
     <header
