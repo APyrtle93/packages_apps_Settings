@@ -76,6 +76,11 @@
                 android:targetClass="de.robv.android.xposed.installer.XposedInstallerActivity" />
         </PreferenceScreen>
 		
+   <PreferenceScreen
+        android:key="screen_recorder"
+        android:title="@string/screen_recorder_title"
+        android:fragment="com.android.settings.chameleonos.ScreenRecorderSettings" />		
+		
          <PreferenceScreen
             android:id="@+id/omniswitch"
             android:layout="@layout/preference_omniswitch"
