@@ -1208,5 +1208,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="unlock_set_unlock_gesture_summary">Low security, experimental</string>
 
     <!-- Summary for "Configure lockscreen" when security gesture is enabled [CHAR LIMIT=45] -->
-    <string name="unlock_set_unlock_mode_gesture">Gesture</string>	
+    <string name="unlock_set_unlock_mode_gesture">Gesture</string>
+
+    <!-- ADB Paranoia settings -->
+    <string name="adb_paranoid">ADB Paranoia Mode</string>
+    <string name="adb_paranoid_summary">Immediately reboot if an unknown computer is connected while device is locked</string>
+	
 </resources>
