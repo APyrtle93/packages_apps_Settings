@@ -1131,7 +1131,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="usb_mass_storage_title">Mass storage</string>
     <string name="usb_mass_storage_summary">Enable USB mass storage</string>
 
-<<<<<<< HEAD
     <!-- Sound themes -->
     <string name="sound_packages_title">Sound packs</string>
     <string name="install_sound_pack_title">Install sound pack</string>
@@ -1223,7 +1222,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="captive_server_summary">Server used to detect captive portal. Leave empty for default.</string>	
 
     <!-- Pie Control -->
-    <string name="pie_control_title">GZ Pie </string>
+    <string name="pie_control_title">GZ Pie</string>
     <string name="pie_control_summary">Enable pie controls</string>
     <string name="pie_control_size">Navigation size</string>
     <string name="pie_control_trigger_positions">Trigger options</string>
