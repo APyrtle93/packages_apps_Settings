@@ -31,12 +31,6 @@
         android:fragment="com.android.settings.applications.AppOpsSummary"
         android:title="@string/appops_settings_title"
         android:id="@+id/appops_settings" />
-		
-    <PreferenceScreen
-        android:id="@+id/system_app_remover"
-        android:fragment="com.android.settings.ose.SystemappRemover"
-        android:title="@string/system_app_remover_title"
-        android:summary="@string/system_app_remover_summary" />
 
         <ListPreference
             android:key="media_scanner_on_boot"
