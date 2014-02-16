@@ -60,6 +60,10 @@
     </PreferenceCategory>
     <PreferenceCategory
         android:title="@string/privacy" >
+		
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="notification_color"
+            android:title="@string/notification_color" />
 
         <CheckBoxPreference
             android:key="privacy_mode"
